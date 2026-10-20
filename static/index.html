@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联通电视</title>
+<link rel="stylesheet" href="/static/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+</head>
+<body>
+
+<!-- 频道墙 -->
+<main id="wall">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">📺</span>
+      <div>
+        <h1>联通电视</h1>
+        <p class="brand-sub">Beijing Unicom · IPTV</p>
+      </div>
+    </div>
+    <div class="top-right">
+      <span id="live-dot" class="live-dot" title="服务状态"></span>
+      <span id="clock" class="clock">--:--</span>
+    </div>
+  </header>
+
+  <nav id="tabs" class="tabs"></nav>
+
+  <section id="grid" class="grid"></section>
+
+  <footer class="wall-footer">
+    <span>共 <b id="ch-count">0</b> 个频道 · 点击卡片观看</span>
+    <span class="hint">播放中:数字键选台 · ↑↓切换 · F全屏 · Esc返回</span>
+  </footer>
+</main>
+
+<!-- 播放页 -->
+<div id="player" class="player" hidden>
+  <video id="video" playsinline></video>
+
+  <div class="player-top">
+    <button id="btn-back" class="pill-btn" title="返回频道墙 (Esc)">‹ 频道墙</button>
+    <div id="now-badge" class="now-badge">
+      <span id="now-num" class="now-num">001</span>
+      <span id="now-name">—</span>
+      <span id="quality-badge" class="q-badge">高清</span>
+    </div>
+  </div>
+
+  <div id="osd" class="osd" hidden><span id="osd-text" class="osd-text">1</span></div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <div id="loading" class="loading" hidden>
+    <div class="spinner"></div>
+    <p id="loading-text">正在接入信号…</p>
+  </div>
+</div>
+
+<script src="/static/hls.min.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>
